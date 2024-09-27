@@ -4,8 +4,10 @@ let isMorning = hours >= 4 && hours < 12 // is it morning?
 let isAfternoon = hours >= 12 && hours < 17 // is it afternoon?
 let isEvening = hours >= 17 || hours < 4 // is it evening?
 
+// selects the element with id of welcome (the div under the header)
 const welcome = document.querySelector('#welcome')
 
+// Returns a message dependent on what time of day it is
 if(isMorning == true){
     welcome.textContent = 'Good Morning!'
 }
@@ -23,3 +25,9 @@ else{
 }
 
 console.log(hours.toString())
+
+
+// Creating a secret message in local storage
+const key = `It's a secret to everybody.`
+
+localStorage.setItem(key, 'Hey! Listen!')
