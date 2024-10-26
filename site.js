@@ -126,3 +126,5 @@ setInterval(() => {
    
 
 })()
+
+console.log('test')
