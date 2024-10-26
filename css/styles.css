@@ -27,3 +27,7 @@ body {
     gap: 10px;
     margin-top: 10px;
 }
+
+#sprite {
+    float: right;
+}

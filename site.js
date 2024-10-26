@@ -74,57 +74,31 @@ setInterval(() => {
 }, 5000)
 
 
-
-
-
-
+// Assignment 7 API Fetch
 (async () => {
+    const getRandomPokemon = async () => {
+    const randomNumber = Math.floor(Math.random() * 150)
+    const url = 'https://pokeapi.co/api/v2/pokemon/' + randomNumber
 
 
-    const https = require('https')
-   
-    const getJsonFrom = async url => {
-        return new Promise(resolve => {
-            https.get(url, response => {
-                let body = ''
-                response.on('data', data => body += data.toString())
-                response.on('end', () => resolve(JSON.parse(body)))
-            })
-        })
-    }
-
-
-    const getPokemonStats = async pokemon => {
-        const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`
-        const json = await getJsonFrom(url)
-        const { id, name, height, weight } = json
-        return { id, name, height, weight }
-    }
-   
-    //const charizard = await getPokemonStats(charizard)
-    const charizard = await getPokemonStats(6) // the api also lets us use the id
-    console.log(charizard)
-
-
-    // const getRandomPokemon = async () => {
-    //     const url = `https://pokeapi.co/api/v2/pokemon/` + Math.floor(Math.random() * 150)
-    //     const json = await getJsonFrom(url)
-    //     const { id, name, height, weight } = json
-    //     return { id, name, height, weight }
-    // }
-   
-    // const pokemon = await getRandomPokemon()
-    // console.log(pokemon)
+    const response = await fetch(url)
+    const json = await response.json()
+    return json
     
-    // const renderPokemon = async () => {
-    //     const pokemon = await getRandomPokemon()
-    //     return pokemon
-    // }
+    }
 
-    // const pokemon = await renderPokemon()
-    // console.log(pokemon)
-   
+    const renderPokemon = async () => {
+        const json = await getRandomPokemon()
 
+        const div = document.querySelector('#sprite')
+
+        const img = document.createElement('img')
+        img.src = json.sprites.front_default
+        img.alt = json.name
+        div.append(img)
+
+        console.log(json.sprites.front_default)
+    }
+
+    renderPokemon()
 })()
-
-console.log('test')
