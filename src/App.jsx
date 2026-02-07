@@ -4,6 +4,7 @@
 import Footer from "./components/footer.jsx"
 import Header from "./components/header.jsx"
 import Nav from "./components/nav.jsx"
+import StarRating from "./components/StarRating.jsx"
 
 
 const ethansMovies = [
@@ -40,7 +41,11 @@ const App = () => {
           My Favorite Movies
         </h1>
         <ul>
-          {ethansMovies.map((movie, index) => <li key={index}>{movie}</li>)}
+          {ethansMovies.map((movie, index) => (
+            <div>
+              <li key={index}>{movie}</li>
+              <StarRating />
+            </div>))}
         </ul>
       </div>
       <Footer />
