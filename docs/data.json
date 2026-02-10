@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "title": "Raiders of the Lost Ark",
+        "year": 1981,
+        "genre": "Adventure",
+        "director": "Steven Spielberg",
+        "rating": 0
+    },
+    {
+        "id": 2,
+        "title": "Star Wars: Episode V - The Empire Strikes Back",
+        "year": 1980,
+        "genre": "Sci-Fi",
+        "director": "Irvin Kershner",
+        "rating": 0
+    },
+    {
+        "id": 3,
+        "title": "The Lord of the Rings: The Two Towers",
+        "year": 2002,
+        "genre": "Fantasy",
+        "director": "Peter Jackson",
+        "rating": 0
+    },
+    {
+        "id": 4,
+        "title": "Frankenstein",
+        "year": 2025,
+        "genre": "Horror",
+        "director": "Guillermo del Toro",
+        "rating": 0
+    },
+    {
+        "id": 5,
+        "title": "Mad Max: Fury Road",
+        "year": 2015,
+        "genre": "Action",
+        "director": "George Miller",
+        "rating": 0
+    }
+]

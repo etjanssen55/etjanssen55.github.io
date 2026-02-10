@@ -28,14 +28,13 @@ useEffect(() => {
     })()
 },[])
 
-if(isLoading) return <div>Loading Movies...</div>
-if(error) return <div style={{color: "#ff9696"}}>Error {error}</div>
-
-
 useEffect(() => {
     setCount(movies.length)
-    return document.title = 'x Favorite Movies';
+    document.title = `${count} Favorite Movies`;
 }, [movies])
+
+if(isLoading) return <div>Loading Movies...</div>
+if(error) return <div style={{color: "#ff9696"}}>Error {error}</div>
 
 return (
    <div>

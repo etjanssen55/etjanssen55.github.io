@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import StarRating from "./StarRating.jsx"
+import StarRating from "./starRating.jsx"
 
 const cardStyle = {
     fontFamily: "Sans-serif",
