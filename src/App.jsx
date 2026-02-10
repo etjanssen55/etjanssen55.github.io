@@ -4,16 +4,7 @@
 import Footer from "./components/footer.jsx"
 import Header from "./components/header.jsx"
 import Nav from "./components/nav.jsx"
-import StarRating from "./components/StarRating.jsx"
-
-
-const ethansMovies = [
-  "Indiana Jones and the Raiders of the Lost Ark",
-  "Star Wars: The Empire Strikes Back",
-  "The Lord of the Rings: The Two Towers",
-  "Frankenstein (2025)",
-  "Mad Max: Fury Road"
-]
+import MovieList from "./components/movieList.jsx"
 
 const pageLayout = {
   display: "flex",
@@ -41,11 +32,7 @@ const App = () => {
           My Favorite Movies
         </h1>
         <ul>
-          {ethansMovies.map((movie, index) => (
-            <div>
-              <li key={index}>{movie}</li>
-              <StarRating />
-            </div>))}
+          <MovieList />
         </ul>
       </div>
       <Footer />

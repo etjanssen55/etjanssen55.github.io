@@ -1,6 +1,9 @@
 :root {
   --bg-color: #2a2a2a;
   --header-bg-color: #000000;
+  --card-bg-color: #3c3c29;
+  --card-border-color: #ffffc7;
+  --card-shadow-color: #000000;
 }
 
 body {
