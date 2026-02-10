@@ -28,6 +28,7 @@ useEffect(() => {
     })()
 },[])
 
+
 useEffect(() => {
     setCount(movies.length)
     document.title = `${count} Favorite Movies`;
