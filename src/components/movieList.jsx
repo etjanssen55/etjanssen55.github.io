@@ -11,7 +11,7 @@ const [ count, setCount ] = useState(0)
 useEffect(() => {
     (async () => {
         try { 
-            const url = '../public/data.json'
+            const url = '/data.json'
             const response = await fetch(url)
             if (!response.ok){
                 throw new Error('Failed to fetch movies')
