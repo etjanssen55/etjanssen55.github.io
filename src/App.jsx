@@ -5,6 +5,8 @@ import Footer from "./components/footer.jsx"
 import Header from "./components/header.jsx"
 import Nav from "./components/nav.jsx"
 import MovieList from "./components/movieList.jsx"
+import ThemeSwitcher from "./components/ThemeSwitcher.jsx"
+import { useState, useEffect } from 'react'
 
 const pageLayout = {
   display: "flex",
@@ -18,11 +20,19 @@ const mainContent = {
 }
 
 const App = () => {
+
+  const [theme, setTheme] = useState('dark')
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+  }, [theme])
+
   return (
     <div style={pageLayout}>
       <Header title="Ethan Janssen" tag="Welcome to my site!">
         <Nav />
       </Header>
+      <ThemeSwitcher onThemeChange={setTheme}/>
       <div className="mainContent" style={mainContent}>
         <h1 style={{padding: "20px"}}>Hello There!</h1>
         <p>

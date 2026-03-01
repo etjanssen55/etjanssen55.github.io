@@ -1,25 +1,98 @@
-:root {
-  --bg-color: #2a2a2a;
-  --header-bg-color: #000000;
+:root[data-theme="dark"] {
+  --bg-color: #1e1e1e;
+  --header-bg-color: #3c3c29;
   --card-bg-color: #3c3c29;
+  --card-text-color: #faff9e;
   --card-border-color: #ffffc7;
   --card-shadow-color: #000000;
+  --text-color: #ffffff;
+  --hover-color: #a4e6fe;
+}
+
+:root[data-theme="light"] {
+  --bg-color: #ffffff;
+  --header-bg-color: #ea8e8e;
+  --card-bg-color: #3c2929;
+  --card-text-color: #ff9e9e;
+  --card-border-color: #ffc7c7;
+  --card-shadow-color: #000000;
+  --text-color: #000000;
+  --hover-color: #a4e6fe;
+}
+
+:root[data-theme="system"] {
+  --bg-color: #ffffff;
+  --header-bg-color: #ea8e8e;
+  --card-bg-color: #3c2929;
+  --card-text-color: #ff9e9e;
+  --card-border-color: #ffc7c7;
+  --card-shadow-color: #000000;
+  --text-color: #000000;
+  --hover-color: #a4e6fe;
+}
+
+@media (prefers-color-scheme: dark){
+  :root[data-theme="system"] {
+  --bg-color: #1e1e1e;
+  --header-bg-color: #3c3c29;
+  --card-bg-color: #3c3c29;
+  --card-text-color: #faff9e;
+  --card-border-color: #ffffc7;
+  --card-shadow-color: #000000;
+  --text-color: #ffffff;
+  --hover-color: #a4e6fe;
+}
 }
 
 body {
   background-color: var(--bg-color);
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  color:#e0e0e0;
+  color:var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
   text-decoration: none;
-  color: #ffffff;
+  color: var(--text-color);
   padding: 10px;
-  cursor: pointer
+  cursor: pointer;
+  transition: color 0.3s ease;
+
 }
 
 a:hover {
   color: #a4e6fe;
+}
+
+.theme-btn {
+  background-color: var(--card-bg-color);
+  color: var(--card-text-color);
+  width: 60px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+.theme-btn.active {
+  background-color: var(--card-bg-color);
+  color: var(--card-text-color);
+  border-bottom-color: rgb(0, 0, 0);
+  border-bottom-style: inset;
+  border-bottom-width: 1.48148px;
+  border-left-color: rgb(0, 0, 0);
+  border-left-style: inset;
+  border-left-width: 1.48148px;
+  border-right-color: rgb(0, 0, 0);
+  border-right-style: inset;
+  border-right-width: 1.48148px;
+  border-top-color: rgb(0, 0, 0);
+  border-top-style: inset;
+  border-top-width: 1.48148px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-btn:hover {
+   box-shadow: inset 0 0 0 2px rgb(0, 0, 0);
 }

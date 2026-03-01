@@ -5,23 +5,27 @@ const headerStyle = {
     width: "100%",
     height: "150px",
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
+    transition: "background-color 0.3s ease"
+
 }
 
 const headerTitle = {
-    color: "#d8d8d8",
+    color: "var(--text-color)",
     margin: "0",
     width: "33.33%",
     padding: "20px",
-    textAlign: "left"
+    textAlign: "left",
+    transition: "color 0.3s ease"
 }
 
 const tagline = {
-    color: "#d8d8d8",
+    color: "var(--text-color)",
     margin: "0",
     width: "33.33%",
     padding: "20px",
-    textAlign: "center"
+    textAlign: "center",
+    transition: "color 0.3s ease"
 }
 
 
@@ -36,7 +40,7 @@ const Header = ({title, tag, children}) => {
             <div className="header" style={headerStyle}>
                 
                 <h1 className="headerTitle" style={headerTitle}>
-                    <FaDice size={30} color={"#ffffff"}/> {title}
+                    <FaDice size={30} color={"var(--text-color)"}/> {title}
                 </h1>
                 <p className="tagline" style={tagline}>
                     {tag}

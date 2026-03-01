@@ -10,7 +10,7 @@ const cardStyle = {
     maxWidth: "500px",
     margin: "8px",
     cursor: 'pointer',
-    color: "#faff9e",
+    color: "var(--card-text-color)",
     padding: "15px",
     margin: "15px"
 }
