@@ -6,7 +6,8 @@ import Header from "./components/header.jsx"
 import Nav from "./components/nav.jsx"
 import MovieList from "./components/movieList.jsx"
 import ThemeSwitcher from "./components/ThemeSwitcher.jsx"
-import { useState, useEffect } from 'react'
+import { useEffect, useContext } from 'react'
+import {ThemeContext} from './contexts/ThemeContext.jsx'
 
 const pageLayout = {
   display: "flex",
@@ -21,7 +22,8 @@ const mainContent = {
 
 const App = () => {
 
-  const [theme, setTheme] = useState('dark')
+
+const {theme} = useContext(ThemeContext)
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
@@ -32,7 +34,7 @@ const App = () => {
       <Header title="Ethan Janssen" tag="Welcome to my site!">
         <Nav />
       </Header>
-      <ThemeSwitcher onThemeChange={setTheme}/>
+      <ThemeSwitcher />
       <div className="mainContent" style={mainContent}>
         <h1 style={{padding: "20px"}}>Hello There!</h1>
         <p>

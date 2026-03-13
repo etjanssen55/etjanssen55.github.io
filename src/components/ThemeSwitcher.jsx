@@ -1,55 +1,36 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useContext } from 'react'
 import {FaRegSun, FaDesktop, FaRegMoon} from "react-icons/fa";
+import { ThemeContext } from '../contexts/ThemeContext.jsx'
 
 const iconSize = 20
 
-const ThemeSwitcher = ({onThemeChange}) => {
+const ThemeSwitcher = () => {
 
-const [activeButton, setActiveButton] = useState(null)
+    
+const {theme, setTheme} = useContext(ThemeContext)
 
-const lightRef = useRef(null)
-const systemRef = useRef(null)
-const darkRef = useRef(null)
-
-useEffect(() => {
-    const map = {
-        light: lightRef,
-        system: systemRef,
-        dark: darkRef
-    }
-    const ref = map[activeButton]
-    if(ref && ref.current) {
-        ref.current.focus()
-    }
-}, [activeButton])
 
 const handleClick = (theme) => {
-    setActiveButton(theme)
-    if(onThemeChange){
-        onThemeChange(theme)
-    }
+    setTheme(theme)
 }
 
     return (
    <>
     <div>
        <button 
-            ref={lightRef}
-            className={activeButton === 'light' ? 'theme-btn active' : 'theme-btn'}
+            className={theme === 'light' ? 'theme-btn active' : 'theme-btn'}
             onClick={() => handleClick('light')}
             ><FaRegSun size={iconSize}/>
         </button>
 
         <button
-            ref={systemRef}
-            className={activeButton === 'system' ? 'theme-btn active' : 'theme-btn'}
+            className={theme === 'system' ? 'theme-btn active' : 'theme-btn'}
             onClick={() => handleClick('system')}
             ><FaDesktop size={iconSize}/>
         </button>
 
         <button
-            ref={darkRef} 
-            className={activeButton === 'dark' ? 'theme-btn active' : 'theme-btn'}
+            className={theme === 'dark' ? 'theme-btn active' : 'theme-btn'}
             onClick={() => handleClick('dark')}
             ><FaRegMoon size={iconSize}/>
        </button>
