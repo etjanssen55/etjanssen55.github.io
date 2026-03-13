@@ -6,13 +6,17 @@ const iconSize = 20
 
 const ThemeSwitcher = () => {
 
-    
+
 const {theme, setTheme} = useContext(ThemeContext)
 
 
 const handleClick = (theme) => {
     setTheme(theme)
 }
+
+useEffect(() => {
+    localStorage.setItem('theme', theme)
+},[theme])
 
     return (
    <>
