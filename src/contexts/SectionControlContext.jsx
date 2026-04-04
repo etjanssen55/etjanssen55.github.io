@@ -5,6 +5,7 @@ export const SectionControlContext = createContext()
 const initialState = {
     showAbout: true,
     showFavorites: true,
+    showAPI: true,
     showContact: true
 }
 
@@ -16,6 +17,10 @@ const sectionReducer = (state, action) => {
             return { ...state, showFavorites: !state.showFavorites }
         case 'TOGGLE_CONTACT':
             return { ...state, showContact: !state.showContact }
+        case 'TOGGLE_CAT':
+            return { ...state, showCAT: !state.showCAT}
+        case 'TOGGLE_DOG':
+            return { ...state, showDOG: !state.showDOG}
         case 'RESET':
             return initialState
         default:

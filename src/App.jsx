@@ -10,6 +10,8 @@ import { useEffect, useContext } from 'react'
 import {ThemeContext} from './contexts/ThemeContext.jsx'
 import SectionControls from "./components/sectionControls.jsx"
 import { SectionControlContext } from "./contexts/SectionControlContext.jsx"
+import CatFacts from "./components/CatFacts.jsx"
+import DogCEO from "./components/DogCEO.jsx"
 
 
 
@@ -66,7 +68,20 @@ const {theme} = useContext(ThemeContext)
             <MovieList />
           </ul>
         </div>
-
+        <button 
+            onClick={() => dispatch({ type: 'TOGGLE_CAT'})}
+            className="accordion"
+        ><h1 style={{padding: "20px"}}>Cat Fact of the Day</h1></button>
+        <div className={sectionControl.showCAT ? 'panelVisible' : 'panelHidden'}>
+          <CatFacts />
+        </div>
+        <button 
+            onClick={() => dispatch({ type: 'TOGGLE_DOG'})}
+            className="accordion"
+        ><h1 style={{padding: "20px"}}>DogCEO</h1></button>
+        <div className={sectionControl.showDOG ? 'panelVisible' : 'panelHidden'}>
+          <DogCEO />
+        </div>
         <button 
             onClick={() => dispatch({ type: 'TOGGLE_CONTACT'})}
             className="accordion"
